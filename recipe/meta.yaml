@@ -24,7 +24,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - libgomp                                # [linux]
+    - libgomp  # [linux]
 
   host:
     - python
@@ -40,6 +40,7 @@ requirements:
     - {{ pin_compatible('numpy', lower_bound='1.20') }}
     - mdanalysis >=2.2.0
     - mdacli >=0.1.12
+    - tqdm
 
 
 test:
