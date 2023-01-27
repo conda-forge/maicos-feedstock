@@ -32,7 +32,7 @@ requirements:
     - numpy {{ numpy }}
     - cython
     - packaging
-    - versioneer
+    - versioneer  # [toml]
 
   run:
     - python
