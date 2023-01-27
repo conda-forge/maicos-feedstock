@@ -32,7 +32,7 @@ requirements:
     - numpy {{ numpy }}
     - cython
     - packaging
-    - versioneer  # [toml]
+    - versioneer
 
   run:
     - python
@@ -40,7 +40,6 @@ requirements:
     - {{ pin_compatible('numpy', lower_bound='1.20') }}
     - mdanalysis >=2.2.0
     - mdacli >=0.1.12
-    - tqdm
 
 
 test:
