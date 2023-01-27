@@ -33,6 +33,7 @@ requirements:
     - cython
     - packaging
     - versioneer
+    - tomli
 
   run:
     - python
