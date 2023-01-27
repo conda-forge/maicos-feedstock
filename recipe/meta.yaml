@@ -24,13 +24,16 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - libgomp  # [linux]
+    - libgomp                                # [linux]
+    - versioneer
+
   host:
     - python
     - pip
     - numpy {{ numpy }}
     - cython
     - packaging
+    - versioneer
 
   run:
     - python
