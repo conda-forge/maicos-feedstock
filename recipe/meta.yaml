@@ -1,5 +1,5 @@
 {% set name = "maicos" %}
-{% set version = "0.7.2" %}
+{% set version = "0.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 512e5c1b1d7fb536c11134681722b564f6b1690868e4a473e298843df7bb8b97
+  sha256: 15d242d638f15ab1fa8f8888df45b4f4e1a746529b33128b1555f45b839bc04f
 
 build:
   number: 0
