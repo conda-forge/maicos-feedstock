@@ -1,5 +1,5 @@
 {% set name = "maicos" %}
-{% set version = "0.7.2" %}
+{% set version = "0.8" %}
 
 package:
   name: {{ name|lower }}
@@ -37,9 +37,12 @@ requirements:
   run:
     - python
     - scipy >=1.0.0
-    - {{ pin_compatible('numpy', lower_bound='1.20') }}
-    - mdanalysis >=2.2.0
-    - mdacli >=0.1.12
+    - {{ pin_compatible('numpy', lower_bound='1.22.3') }}
+    - mdanalysis >=2.7.0
+    - mdacli >=0.1.28
+    - tqdm >=4.60.0
+    - typing_extensions
+
 
 
 test:
