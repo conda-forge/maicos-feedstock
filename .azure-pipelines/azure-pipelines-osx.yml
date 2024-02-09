@@ -17,6 +17,9 @@ jobs:
       osx_64_numpy1.23.5python3.11.____cpython:
         CONFIG: osx_64_numpy1.23.5python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
+      osx_64_numpy1.26.0python3.12.____cpython:
+        CONFIG: osx_64_numpy1.26.0python3.12.____cpython
+        UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
   steps:
