@@ -1,13 +1,13 @@
 {% set name = "maicos" %}
-{% set version = "0.8" %}
+{% set version = "0.9" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 15d242d638f15ab1fa8f8888df45b4f4e1a746529b33128b1555f45b839bc04f
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: d6cc66ff998f2a55b0edb1a160acda356e0e282be1f749f92d730824307448f8
 
 build:
   number: 0
@@ -23,6 +23,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - libgomp  # [linux]
   host:
