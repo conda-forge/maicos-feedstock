@@ -7,7 +7,7 @@ Home: https://www.maicos-analysis.org
 
 Package license: GPL-3.0-or-later
 
-Summary: A Python package for Molecular Analysis for Interfacial and Confined Systems.
+Summary: Analyse molecular dynamics simulations of interfacial and confined systems.
 
 Development: https://gitlab.com/maicos-devel/maicos
 
