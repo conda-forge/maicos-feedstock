@@ -10,16 +10,19 @@ source:
   sha256: d6cc66ff998f2a55b0edb1a160acda356e0e282be1f749f92d730824307448f8
 
 build:
+  number: 1
+  skip: true  # [python_impl == 'pypy']
+  skip: true  # [py>314]
   skip: true  # [py<310]
-  entry_points:
-    - maicos = maicos.__main__:main
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
+    - libgomp  # [linux]
+
   host:
     - python
     - cython >=0.28
@@ -35,7 +38,6 @@ requirements:
     - mdacli >=0.1.28
     - mdanalysis >=2.8.0
     - typing_extensions
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
