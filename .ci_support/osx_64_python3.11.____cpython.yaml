@@ -20,8 +20,6 @@ cxx_compiler_version:
 - '18'
 macos_machine:
 - x86_64-apple-darwin13.4.0
-numpy:
-- '2.0'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -36,5 +34,4 @@ zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
 - - python
-  - numpy
   - python_impl
