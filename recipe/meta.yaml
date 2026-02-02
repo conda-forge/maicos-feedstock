@@ -38,6 +38,7 @@ test:
     - maicos --help
     - pip list | grep -iE "^maicos\s+{{ version.replace('.', '\.') }}$"
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
