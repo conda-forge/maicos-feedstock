@@ -11,7 +11,6 @@ source:
   sha256: e28a56adf6c4614911a735e4344e8ccc6421891e60d917c3db06b0a524461f4c
 
 build:
-  skip: true  # [py<{{ python_min }}]
   entry_points:
     - maicos = maicos.__main__:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -19,14 +18,14 @@ build:
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - packaging
     - setuptools >=77
     - setuptools_scm >=8
     - wheel
     - pip
   run:
-    - python
+    - python >={{ python_min }}
     - mdacli >=0.2
     - mdanalysis >=2.10.0
 
@@ -36,6 +35,7 @@ test:
   commands:
     - pip check
     - maicos --help
+    - pip list | grep -iE "^maicos\s+{{ version.replace('.', '\.') }}$"
   requires:
     - pip
 
