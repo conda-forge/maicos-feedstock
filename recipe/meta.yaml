@@ -1,5 +1,6 @@
 {% set name = "maicos" %}
-{% set version = "0.11.2" %}
+{% set version = "0.12" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,37 +8,27 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/maicos-{{ version }}.tar.gz
-  sha256: b28ae5895812bc0d11270b2c8c733c49cfe213fa98c26244b0e65f80f0875d1e
+  sha256: e28a56adf6c4614911a735e4344e8ccc6421891e60d917c3db06b0a524461f4c
 
 build:
-  skip: true  # [python_impl == 'pypy']
-  skip: true  # [py<310]
+  noarch: python
   entry_points:
     - maicos = maicos.__main__:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - {{ stdlib("c") }}
-    - libgomp  # [linux]
   host:
-    - python
-    - cython >=0.28
+    - python {{ python_min }}
     - packaging
-    - numpy >=2.0.0
     - setuptools >=77
-    - setuptools-git-versioning <2
-    - versioneer
+    - setuptools_scm >=8
     - wheel
     - pip
   run:
-    - python
-    - mdacli >=0.1.28
-    - mdanalysis >=2.8.0
-    - typing_extensions
+    - python >={{ python_min }}
+    - mdacli >=0.2
+    - mdanalysis >=2.10.0
 
 test:
   imports:
@@ -45,7 +36,9 @@ test:
   commands:
     - pip check
     - maicos --help
+    - pip list | grep -iE "^maicos\s+{{ version.replace('.', '\.') }}$"
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
