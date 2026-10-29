@@ -1,10 +1,9 @@
 {% set name = "maicos" %}
 {% set version = "0.13" %}
-{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/maicos-{{ version }}.tar.gz
@@ -21,14 +20,15 @@ requirements:
   host:
     - python {{ python_min }}
     - packaging
-    - setuptools >=77
+    - setuptools >=77.0.1
     - setuptools_scm >=8
     - wheel
     - pip
   run:
     - python >={{ python_min }}
-    - mdacli >=0.2
+    - mdacli >=0.2.1
     - mdanalysis >=2.10.0
+    - tqdm <4.70
 
 test:
   imports:
@@ -50,7 +50,7 @@ about:
   description: MAICoS is an object-oriented python toolkit for analysing the structure and dynamics of interfacial and confined fluids from molecular simulations. Combined with MDAnalysis, MAICoS can be used to extract density profiles, dielectric constants, structure factors, or transport properties from trajectories 
     files, including LAMMPS, GROMACS, CHARMM or NAMD data. MAICoS is open source and is released under the GNU general public license v3.0.
   doc_url: https://www.maicos-analysis.org
-  dev_url: https://gitlab.com/maicos-devel/maicos
+  dev_url: https://github.com/maicos-devel/maicos
 
 extra:
   recipe-maintainers:
