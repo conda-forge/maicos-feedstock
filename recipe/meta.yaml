@@ -1,5 +1,5 @@
 {% set name = "maicos" %}
-{% set version = "0.13" %}
+{% set version = "0.13.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/maicos-{{ version }}.tar.gz
-  sha256: 394ee8e775415cfb7f2b2fab62e655ff8d3ff7f4228e25a03997eff77bf51a06
+  sha256: e7c456f6fc0d09a3728617397495a7ca37858732220bb7e1a30788ae389cb7ca
 
 build:
   noarch: python

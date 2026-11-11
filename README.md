@@ -9,7 +9,7 @@ Package license: GPL-3.0-or-later
 
 Summary: Analyse molecular dynamics simulations of interfacial and confined systems.
 
-Development: https://gitlab.com/maicos-devel/maicos
+Development: https://github.com/maicos-devel/maicos
 
 Documentation: https://www.maicos-analysis.org
 
@@ -195,5 +195,4 @@ Feedstock Maintainers
 
 * [@PicoCentauri](https://github.com/PicoCentauri/)
 * [@hejamu](https://github.com/hejamu/)
-* [@srihas29](https://github.com/srihas29/)
 
